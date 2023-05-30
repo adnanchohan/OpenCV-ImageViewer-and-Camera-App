@@ -1,2 +1,2 @@
-ninja: Entering directory `C:\Users\Adnan Chohan\AndroidStudioProjects\KotlinTutorial\OpenCV\.cxx\Debug\1o6w5f6f\arm64-v8a'
+ninja: Entering directory `C:\Users\Adnan Chohan\Documents\OpenCV-ImageViewer-and-Camera-App\OpenCV\.cxx\Debug\1o6w5f6f\arm64-v8a'
 ninja: no work to do.

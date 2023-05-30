@@ -23,10 +23,7 @@ public class JavaMainActivity extends AppCompatActivity {
     Button openCamerabtn,selectbtn;
     ImageView imgView;
     int SELECT_CODE = 100;
-
     int CAMERA_CODE = 101;
-
-    int PERMISSION_CODE = 102;
     Mat mat;
     Bitmap bitmap;
     @Override
@@ -50,13 +47,8 @@ public class JavaMainActivity extends AppCompatActivity {
         openCamerabtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
-                    getPermission();
-                } else {
                     Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
                     startActivityForResult(intent, CAMERA_CODE);
-                }
             }
         });
     }
@@ -86,19 +78,4 @@ public class JavaMainActivity extends AppCompatActivity {
         }
     }
 
-    void getPermission(){
-        if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
-            requestPermissions(new String[]{Manifest.permission.CAMERA},PERMISSION_CODE);
-        }
-    }
-
-    @Override
-    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (requestCode == PERMISSION_CODE && grantResults.length > 0){
-            if (grantResults[0] != PackageManager.PERMISSION_GRANTED){
-                getPermission();
-            }
-        }
-    }
 }
